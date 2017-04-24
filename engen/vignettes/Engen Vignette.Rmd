@@ -1,0 +1,107 @@
+---
+title: "Engen Vignette"
+author: "Katherine Fullerton"
+date: ""
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Engen Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Background
+
+As Global energy demand continues to increase, it is more important than ever to design and implement power plants that are efficient in their energy generation, especially when it comes to renewable energy. Tracking different measure of efficiency of energy generation for individual plants becomes important for identifying plants that are not meeting these efficiency/production standards.
+
+## Functions
+
+This package includes 4 functions related to calculating measures of net generation over time: mo_engen, mo_engen_gr, yr_engen, yr_engen_gr. 
+
+###mo_engen
+
+This function is utilized to calculate the monthly nameplate capacity of a power plant based on its installed capacity and calculate the percent net generation as a percent of installed capacity. 
+
+This installed capacity will generally be reported in units of kW, and it can be assumed that this installed capacity represents the kWh rate of energy generation, which can be multiplied by 24 hours/day and an assumed 30 days/month to find the monthly nameplate capacity. 
+
+Now knowing the monthly nameplate capacity, the net generation of a plant, or the amount of electricity that is ultimately distributed for consumer use, can be expressed as a percentage of the nameplate capacity to give a loose measure of a plant's efficiency of production. 
+
+####Parameters
+
+The mo_engen() function takes 5 parameters:
+
+|  Parameter | Information                                                                                |
+|-----------:|:-------------------------------------------------------------------------------------------|
+|      df    |  The data frame to be used in this function. Must be previously imported.                  |
+|   ins_cap  |  The numeric column containing the installed capacity of the power plant                   |
+|   mo_name  |  The name of the column filled with the newly calculated nameplate capacity                |
+|   net_gen  |  The numeric column containing the net generation of the power plant                       |
+|   per_cen  |  The name of the column filled with the newly calculated percent net generation parameter  |
+
+
+####Usage
+```
+mon_gen <- read.csv("...data/kate_data2.csv")
+mon_gen_mo <- mo_engen(mon_gen, "Installed.Capacity", "Monthly.Nameplate", "Net.Generation", "Percent.Generation")
+```
+
+###mo_engen_gr
+
+This function is designed to be utilized after running mo_engen and allows for graphical representation of the newly calculated parameters. It will take the data from a single plant, and plot the desired parameter (such as net generation or percent net generation) as a function of the month, generating a series of graphs showing these monthly trends in different years. 
+
+####Parameters
+
+The mo_engen_gr() function takes 6 parameters:
+
+|  Parameter | Information                                                                                                    |
+|-----------:|:---------------------------------------------------------------------------------------------------------------|
+|      df    |  The data frame to be used in this function, ideally having already passed through mo_engen                    |
+|     col    |  The column containing the name of the plant the data corresponds to                                           |
+|   plant    |  The character string of the name of the plant you want to generate graphs for                                 |
+|   para     |  The numeric column containing the parameter you wish to graph on the y axis (ie net generation)               |
+|   month    |  The numeric column indicating the month the data corresponds to. Must be in numeric format (ie 1 and not Jan) |
+|   year     |  The numeric column containing the year corresponding to the data in order to wrap the data                    |
+
+####Usage
+```
+mon_gen_mo_gr <- mo_engen_gr(mon_gen_mo, "Plant.Name", "Alvoca", "Month", "Year")
+```
+
+###yr_engen
+
+This function is designed to be utilized after running mo_engen and allows for a new table to be generated that summarizes the mean value of a specified parameter for each year for a single power plant. The function first sub-sets the data for the desired plant and then calculates the mean value of all the columns for each year and then prints a table of 2 columns of the year and the corresponding average. 
+
+####Parameters
+
+The yr_engen() function takes 5 parameters:
+
+|  Parameter | Information                                                                                        |
+|-----------:|:---------------------------------------------------------------------------------------------------|
+|    df      |  The data frame to be used in this function, ideally having already passed through mo_engen        |
+|    col     |  The column containing the name of the plant the data corresponds to                               |
+|    plant   |  The character string of the name of the plant you want to summarize                               |
+|    year    |  The numeric column containing the year corresponding to the data in order properly group the data |
+|    para    |  The numeric column containing the parameter you wish to calculate the yearly mean of              |
+
+####Usage
+```
+mon_gen_yr <- yr_engen(mon_gen_mo, "Plant.Name", "Alcova", "Year", "Percent.Generation")
+```
+
+###yr_engen_gr
+
+This function is designed to be utilized after running yr_engen to give a graphical representation of the summarized yearly averages for the designated parameter, graphing the year on the x axis and the parameter averages on the x axis. 
+
+####Parameters
+
+The yr_engen_gr() function takes 3 parameters:
+
+|  Parameter | Information                                                                                        |
+|-----------:|:---------------------------------------------------------------------------------------------------|
+|     df     |  The data frame to be used in this function, ideally having already passed through mo_engen        |
+|    year    |  The numeric column containing the year corresponding to the data in order properly group the data |
+|    para    |  The numeric column containing the parameter you wish to calculate the yearly mean of              |
+
+####Usage
+```
+mon_gen_yr_gr <- yr_engen_gr(mon_gen_mo_al, "Year", "Percent.Generation")
+```

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Katherine Fullerton" />
+
+
+<title>Engen Vignette</title>
+
+
+
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Engen Vignette</h1>
+<h4 class="author"><em>Katherine Fullerton</em></h4>
+
+
+
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>As Global energy demand continues to increase, it is more important than ever to design and implement power plants that are efficient in their energy generation, especially when it comes to renewable energy. Tracking different measure of efficiency of energy generation for individual plants becomes important for identifying plants that are not meeting these efficiency/production standards.</p>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<p>This package includes 4 functions related to calculating measures of net generation over time: mo_engen, mo_engen_gr, yr_engen, yr_engen_gr.</p>
+<div id="mo_engen" class="section level3">
+<h3>mo_engen</h3>
+<p>This function is utilized to calculate the monthly nameplate capacity of a power plant based on its installed capacity and calculate the percent net generation as a percent of installed capacity.</p>
+<p>This installed capacity will generally be reported in units of kW, and it can be assumed that this installed capacity represents the kWh rate of energy generation, which can be multiplied by 24 hours/day and an assumed 30 days/month to find the monthly nameplate capacity.</p>
+<p>Now knowing the monthly nameplate capacity, the net generation of a plant, or the amount of electricity that is ultimately distributed for consumer use, can be expressed as a percentage of the nameplate capacity to give a loose measure of a plant’s efficiency of production.</p>
+<div id="parameters" class="section level4">
+<h4>Parameters</h4>
+<p>The mo_engen() function takes 5 parameters:</p>
+<table>
+<colgroup>
+<col width="12%"></col>
+<col width="87%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Parameter</th>
+<th align="left">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">df</td>
+<td align="left">The data frame to be used in this function. Must be previously imported.</td>
+</tr>
+<tr class="even">
+<td align="right">ins_cap</td>
+<td align="left">The numeric column containing the installed capacity of the power plant</td>
+</tr>
+<tr class="odd">
+<td align="right">mo_name</td>
+<td align="left">The name of the column filled with the newly calculated nameplate capacity</td>
+</tr>
+<tr class="even">
+<td align="right">net_gen</td>
+<td align="left">The numeric column containing the net generation of the power plant</td>
+</tr>
+<tr class="odd">
+<td align="right">per_cen</td>
+<td align="left">The name of the column filled with the newly calculated percent net generation parameter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usage" class="section level4">
+<h4>Usage</h4>
+<pre><code>mon_gen &lt;- read.csv(&quot;...data/kate_data2.csv&quot;)
+mon_gen_mo &lt;- mo_engen(mon_gen, &quot;Installed.Capacity&quot;, &quot;Monthly.Nameplate&quot;, &quot;Net.Generation&quot;, &quot;Percent.Generation&quot;)</code></pre>
+</div>
+</div>
+<div id="mo_engen_gr" class="section level3">
+<h3>mo_engen_gr</h3>
+<p>This function is designed to be utilized after running mo_engen and allows for graphical representation of the newly calculated parameters. It will take the data from a single plant, and plot the desired parameter (such as net generation or percent net generation) as a function of the month, generating a series of graphs showing these monthly trends in different years.</p>
+<div id="parameters-1" class="section level4">
+<h4>Parameters</h4>
+<p>The mo_engen_gr() function takes 6 parameters:</p>
+<table>
+<colgroup>
+<col width="10%"></col>
+<col width="89%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Parameter</th>
+<th align="left">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">df</td>
+<td align="left">The data frame to be used in this function, ideally having already passed through mo_engen</td>
+</tr>
+<tr class="even">
+<td align="right">col</td>
+<td align="left">The column containing the name of the plant the data corresponds to</td>
+</tr>
+<tr class="odd">
+<td align="right">plant</td>
+<td align="left">The character string of the name of the plant you want to generate graphs for</td>
+</tr>
+<tr class="even">
+<td align="right">para</td>
+<td align="left">The numeric column containing the parameter you wish to graph on the y axis (ie net generation)</td>
+</tr>
+<tr class="odd">
+<td align="right">month</td>
+<td align="left">The numeric column indicating the month the data corresponds to. Must be in numeric format (ie 1 and not Jan)</td>
+</tr>
+<tr class="even">
+<td align="right">year</td>
+<td align="left">The numeric column containing the year corresponding to the data in order to wrap the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usage-1" class="section level4">
+<h4>Usage</h4>
+<pre><code>mon_gen_mo_gr &lt;- mo_engen_gr(mon_gen_mo, &quot;Plant.Name&quot;, &quot;Alvoca&quot;, &quot;Month&quot;, &quot;Year&quot;)</code></pre>
+</div>
+</div>
+<div id="yr_engen" class="section level3">
+<h3>yr_engen</h3>
+<p>This function is designed to be utilized after running mo_engen and allows for a new table to be generated that summarizes the mean value of a specified parameter for each year for a single power plant. The function first sub-sets the data for the desired plant and then calculates the mean value of all the columns for each year and then prints a table of 2 columns of the year and the corresponding average.</p>
+<div id="parameters-2" class="section level4">
+<h4>Parameters</h4>
+<p>The yr_engen() function takes 5 parameters:</p>
+<table>
+<colgroup>
+<col width="11%"></col>
+<col width="88%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Parameter</th>
+<th align="left">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">df</td>
+<td align="left">The data frame to be used in this function, ideally having already passed through mo_engen</td>
+</tr>
+<tr class="even">
+<td align="right">col</td>
+<td align="left">The column containing the name of the plant the data corresponds to</td>
+</tr>
+<tr class="odd">
+<td align="right">plant</td>
+<td align="left">The character string of the name of the plant you want to summarize</td>
+</tr>
+<tr class="even">
+<td align="right">year</td>
+<td align="left">The numeric column containing the year corresponding to the data in order properly group the data</td>
+</tr>
+<tr class="odd">
+<td align="right">para</td>
+<td align="left">The numeric column containing the parameter you wish to calculate the yearly mean of</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usage-2" class="section level4">
+<h4>Usage</h4>
+<pre><code>mon_gen_yr &lt;- yr_engen(mon_gen_mo, &quot;Plant.Name&quot;, &quot;Alcova&quot;, &quot;Year&quot;, &quot;Percent.Generation&quot;)</code></pre>
+</div>
+</div>
+<div id="yr_engen_gr" class="section level3">
+<h3>yr_engen_gr</h3>
+<p>This function is designed to be utilized after running yr_engen to give a graphical representation of the summarized yearly averages for the designated parameter, graphing the year on the x axis and the parameter averages on the x axis.</p>
+<div id="parameters-3" class="section level4">
+<h4>Parameters</h4>
+<p>The yr_engen_gr() function takes 3 parameters:</p>
+<table>
+<colgroup>
+<col width="11%"></col>
+<col width="88%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Parameter</th>
+<th align="left">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">df</td>
+<td align="left">The data frame to be used in this function, ideally having already passed through mo_engen</td>
+</tr>
+<tr class="even">
+<td align="right">year</td>
+<td align="left">The numeric column containing the year corresponding to the data in order properly group the data</td>
+</tr>
+<tr class="odd">
+<td align="right">para</td>
+<td align="left">The numeric column containing the parameter you wish to calculate the yearly mean of</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usage-3" class="section level4">
+<h4>Usage</h4>
+<pre><code>mon_gen_yr_gr &lt;- yr_engen_gr(mon_gen_mo_al, &quot;Year&quot;, &quot;Percent.Generation&quot;)</code></pre>
+</div>
+</div>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

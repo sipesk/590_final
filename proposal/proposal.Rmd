@@ -6,9 +6,9 @@ output: md_document
 Final Project Proposal for GEOL590  
 Kate Fullerton and Katie Sipes  
 
-##Hydropower Production, Cost-Analysis, and Population-Dependent Consumption  
+## Hydropower Production, Cost-Analysis, and Population-Dependent Consumption  
 
-###Overview  
+### Overview  
 Energy consumption throughout the United States is a carefully watched statistic by the U.S Energy Information Association. Energy uses in biofuel, gasoline, wind power and even electricity trends are diligently annotated in consensus data (1). The efficiency of energy usage is a big area of research as other forms of energy have been more readily used, such as wind and solar power. Energy demands across the United States vary largely on population (2).
 
 ### Plan

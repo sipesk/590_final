@@ -1,0 +1,18 @@
+Package: engen
+Title: Energy Generation Analysis Tools
+Version: 0.0.0.1
+Authors@R: person("Fullerton", "Katherine", email = "kfulle16@vols.utk.edu", role = c("aut", "cre"))
+Description: This package provides a series of tools that allow for the analysis of energy generation
+        data on the monthly and yearly scales. Monthly nameplate generation (ie maximum generation) and
+        percent generation (ie. net generation as a percentage of nameplate) can be calculated and averaged
+        per year for individual plants. All of this data can then be graphed, either monthly trends compared
+        between years or yearly trends.
+Depends: R (>= 3.0)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: ggplot2
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
